@@ -1,0 +1,106 @@
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin multi-ellipsis($font-size, $line-height, $lines) {
+  font-size: $font-size;
+  line-height: $line-height;
+  max-height: $line-height * $lines;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  /* autoprefixer: off */
+}
+
+@mixin multi-ellipsis-line3 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3 !important;
+}
+
+@mixin lsToPx($fontSize, $percent) {
+  letter-spacing: ($fontSize * $percent * -0.01) + px;
+}
+
+@mixin paginationProgressMo($width, $positionTop, $positionBottom) {
+  width: $width;
+  top: $positionTop;
+  bottom: $positionBottom;
+}
+
+$tablet: 1240px; // 모바일 대응
+$mobile: 768px;
+
+
+
+/*반응형, 브라우저 크기가 768이상, 1240px 이하일때*/
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 768px 이하일때*/
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+
+/**************************************************************************************************
+position width / height
+**************************************************************************************************/
+@mixin half() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin half-height($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin half-width($position: absolute) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin half-reset() {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/**************************************************************************************************
+font
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+gradient
+**************************************************************************************************/
+
+/***************************************π***********************************************************
+list
+**************************************************************************************************/
+
+
+/**************************************************************************************************
+title
+**************************************************************************************************/
+/* pc */
+
+/**************************************************************************************************
+transition
+**************************************************************************************************/

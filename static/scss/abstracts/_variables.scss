@@ -1,0 +1,74 @@
+//font
+
+
+// basic
+$white: #fff;
+$black: #000;
+
+//main color
+
+$main-blue: #3778FE;
+$main-mint: #00B7BA;
+
+
+//sub color
+$sub-blue-1: #F2F6FA;
+$sub-blue-2: #E4E8ED;
+$sub-blue-3: #E0ECFF;
+$sub-blue-4: #DCE6F7;
+$sub-blue-4: #3778FE;
+
+$sub-mint-1: #C3EBE9;
+$sub-mint-2: #00CBC4;
+
+$sub-yellow-1: #FCF0CC;
+$sub-yellow-1: #FEC637;
+
+$sub-red: #FE4A4A;
+
+// text
+
+$text-01: #D8DFE5;
+$text-02: #9CA0AD;
+$text-03: #7B808F;
+$text-04: #3D444D;
+$text-05: #0C0D0F;
+$text-06: #999EAD;
+$text-07: #9DA2B2;
+$text-08: #565D66;
+
+
+
+//border
+$line-01: #EBF0F5;
+$line-02: #F0F5FA;
+$line-03: #E6EFF7;
+$line-04: #D3DCE5;
+
+$line-05: #E8FCFC;
+$line-06: #EDF4FE;
+
+
+$line-07: #C2C7CC;
+$line-08: #E6EAF0;
+$line-09: #4B4E52;
+
+// background
+
+$bg: #F6F7F9;
+
+
+/**************************************************************************************************
+common function
+**************************************************************************************************/
+@function pxTorem($size) {
+  @return calc($size / 16px) * 1rem;
+}
+
+@function vw($size) {
+  @return calc($size / 1920px) * 100vw;
+}
+
+@function vh($size) {
+  @return calc($size / 970px) * 100vw;
+}

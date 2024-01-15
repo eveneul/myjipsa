@@ -1,0 +1,369 @@
+#wrap {
+}
+
+.guide-wrap {
+  min-height: 100vh;
+  background: #f4efe8 !important;
+  #header {
+    padding: 30px;
+
+    h1 {
+      text-align: center;
+      font-size: pxTorem(70px);
+      font-weight: 700;
+      line-height: pxTorem(84px);
+      letter-spacing: -0.3px;
+    }
+  }
+
+  #container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    padding: pxTorem(120px) pxTorem(50px) pxTorem(160px);
+
+    .guide-h2 {
+      margin-bottom: pxTorem(20px);
+      color: #202020;
+      font-size: pxTorem(20px);
+    }
+
+    .guide-h4 {
+      color: #202020;
+    }
+  }
+
+  .guide-wrap-lnb {
+    min-height: 100vh;
+    padding: 30px;
+  }
+}
+
+h1.guide-tit {
+  color: #333;
+  font-size: pxTorem(25px);
+  font-weight: 700;
+  line-height: pxTorem(25px);
+  letter-spacing: -0.3px;
+}
+
+h2.guide-tit {
+  padding: 10px 0 0 0;
+  border: 0 none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.guide-h3 {
+  padding: 20px 0 0 5px;
+  font-size: 16px;
+  color: $gray-800;
+}
+
+.guide-h4 {
+  padding: 10px 0 0 5px;
+  font-size: 12px;
+}
+
+.guide-desc {
+  color: #232323;
+}
+
+.box-type {
+  margin-top: 20px;
+}
+.row {
+  display: flex;
+}
+/**************************************************************************************************
+guide-container
+**************************************************************************************************/
+.guide-container {
+  padding-top: 0;
+
+  .form-wrap {
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: pxTorem(16px);
+  }
+
+  .contents {
+    max-width: 100%;
+    padding-top: 50px;
+  }
+
+  .guide-title {
+    margin-bottom: pxTorem(100px);
+    text-align: center;
+  }
+
+  .guide-h2 {
+    margin-bottom: pxTorem(20px);
+    color: #8a949e;
+    font-size: pxTorem(20px);
+  }
+
+  .guide-h4 {
+    color: #8a949e;
+  }
+
+  .codemirror-box {
+    height: 300px;
+  }
+
+  @include mobile {
+    padding: 0 pxTorem(30px);
+
+    .contents {
+      padding-top: pxTorem(10px);
+    }
+
+    .guide-title {
+      margin-bottom: pxTorem(50px);
+    }
+  }
+}
+
+.guide-sub-tit {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.guide-li > li {
+  padding: 0 0 0 8px;
+  text-indent: -8px;
+}
+
+.gnb {
+  width: 100%;
+  padding: 10px;
+  background: #504336;
+
+  ul:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+
+  li {
+    float: left;
+  }
+
+  a {
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+  }
+}
+
+.guide-table {
+  margin: 10px 0 0;
+
+  th {
+    padding: 5px;
+    border: 1px solid #bfbfbf;
+  }
+}
+
+.guide_table td {
+  padding: 5px;
+  border: 1px solid #bfbfbf;
+}
+
+.guide-table th {
+  background: #124424;
+  color: #333;
+  border-bottom: 0 none;
+}
+
+#header.guide_header {
+  height: 50px;
+  // background: #62584e;
+}
+
+.guide_header .guide-tit {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.7em;
+}
+
+.guide-lnb {
+  > ul {
+    padding-top: 50px;
+    font-size: 14px;
+  }
+
+  ul > li {
+    margin-bottom: 10px;
+
+    &.on {
+      font-weight: 700;
+    }
+
+    strong {
+      display: block;
+      position: relative;
+      padding: 0 0 0 17px;
+    }
+
+    &.sub strong:after {
+      content: "+";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 13px;
+      height: 13px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      padding: 0 0 0 1px;
+      line-height: 9px;
+    }
+
+    &.on {
+      strong:after {
+        content: "-";
+        padding: 0 0 0 3px;
+      }
+
+      > ul {
+        display: block;
+        margin-left: 10px;
+
+        > li {
+          position: relative;
+
+          &.on {
+            background: #fff7db;
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 2px;
+            height: 2px;
+            font-size: 20px;
+            background: #666;
+          }
+        }
+      }
+    }
+
+    > {
+      a {
+        padding: 0;
+        font-size: 14px;
+      }
+
+      ul {
+        display: none;
+        margin: 4px 0;
+      }
+    }
+
+    > ul > li a {
+      display: block;
+      padding: 3px 0 3px 20px;
+    }
+  }
+}
+
+.guide-txt {
+  padding: 5px 0 0 10px;
+}
+
+.guide-list {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.guide_list {
+  > li {
+    float: left;
+    margin: 0 40px 10px 0;
+    padding: 0;
+    text-indent: 0;
+  }
+
+  li strong {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  .h2_tit {
+    color: #222;
+  }
+
+  ol {
+    padding: 5px 0 0 15px;
+
+    li {
+      padding: 7px 0 0;
+
+      span {
+        margin-right: 5px;
+        color: #222;
+        font-family: arial, sans-serif;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/**************************************************************************************************
+flex
+**************************************************************************************************/
+.d-flex {
+  display: flex !important;
+  // gap: 20px;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.divider {
+  position: relative;
+  padding: 50px 0;
+
+  &:not(:first-of-type):before {
+    content: "";
+    @include half-height();
+    left: 0;
+    display: inline-block;
+    height: 0.5px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+/**************************************************************************************************
+code-mirror
+**************************************************************************************************/
+
+.btn-code {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.code-mirror {
+  display: none;
+  width: 100%;
+  height: 240px;
+  margin: 20px 0;
+  outline: none;
+  border: none;
+  resize: none;
+  padding: 20px 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}

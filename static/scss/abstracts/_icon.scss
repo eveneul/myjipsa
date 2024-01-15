@@ -1,0 +1,35 @@
+i {
+  display: block;
+}
+
+.ico-apple {
+  width: pxTorem(30px);
+  height: pxTorem(30px);
+  background: url('../images/icon/ico-apple.svg') no-repeat center / cover;
+}
+
+.ico-google {
+  width: pxTorem(30px);
+  height: pxTorem(30px);
+  background: url('../images/icon/ico-google.svg') no-repeat center / cover;
+}
+
+.ico-profile {
+
+  width: pxTorem(37.44px);
+  aspect-ratio: 1 / 1;
+  background: url('../images/icon/ico-profile.svg') no-repeat center / cover;
+}
+
+.ico-ttl {
+  width: pxTorem(52px);
+  aspect-ratio: 1 / 1;
+  margin-top: pxTorem(10px);
+  margin-right: pxTorem(22px);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+  }
+}

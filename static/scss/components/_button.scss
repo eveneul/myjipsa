@@ -1,0 +1,43 @@
+.link-store {
+  position: relative;
+  width: pxTorem(274px);
+  height: pxTorem(106px);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+
+
+  span {
+    font-weight: 500;
+    font-size: pxTorem(26px);
+    color: $white;
+    margin-left: pxTorem(6px);
+  }
+
+  &.blue {
+    background-color: $main-blue;
+    border-color: #568DFF;
+
+    // &::before {
+    //   display: none;
+    // }
+  }
+
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: red;
+
+  // }
+}
