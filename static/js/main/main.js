@@ -28,11 +28,11 @@ proxySwiperWrapper.style.height = proxySwiperHeight + "px"
 console.log(proxySwiperHeight)
 
 
-var swiper = new Swiper(".sc-proxy .swiper-container", {
-  direction: 'vertical',
-  slidesPerView: 1,
-  // paginationClickable: true,
-  mousewheelControl: true,
-  parallax: true,
-  speed: 600,
-})
+// var swiper = new Swiper(".sc-proxy .swiper-container", {
+//   direction: 'vertical',
+//   slidesPerView: 1,
+//   // paginationClickable: true,
+//   mousewheelControl: true,
+//   parallax: true,
+//   speed: 600,
+// })
