@@ -5,6 +5,56 @@ main.main {
     gap: pxTorem(20px);
   }
 
+  .sc-category {
+    font-weight: 700;
+    font-size: pxTorem(28px);
+    line-height: 1;
+    color: $main-blue;
+    margin-bottom: pxTorem(20px);
+    text-align: center;
+    transition: all 0.4s;
+    transform: translateY(20px);
+    opacity: 0;
+
+    &.in-view {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  .sc-title {
+    font-weight: 700;
+    font-size: pxTorem(64px);
+    line-height: calc(76 / 64);
+    color: $text-05;
+    margin-bottom: pxTorem(18px);
+    text-align: center;
+    transition: all 0.4s;
+    transform: translateY(20px);
+    opacity: 0;
+
+    &.in-view {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  .sc-desc {
+    font-weight: 500;
+    font-size: pxTorem(20px);
+    line-height: calc(32 / 20);
+    color: $text-03;
+    text-align: center;
+    transition: all 0.4s;
+    transform: translateY(20px);
+    opacity: 0;
+
+    &.in-view {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
   .sc {
     &-visual {
       position: relative;

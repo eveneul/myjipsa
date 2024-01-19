@@ -13,6 +13,7 @@
 @import "./components/button";
 @import "./components/mockup";
 @import "./components/pagination";
+@import "./components/select";
 
 //base
 @import "./layout/header";
@@ -22,3 +23,4 @@
 
 //pages
 @import "./pages/main";
+@import "./pages/privacy";

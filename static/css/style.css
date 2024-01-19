@@ -374,53 +374,6 @@ ol {
   }
 }
 
-.sc-category {
-  font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 1;
-  color: #3778FE;
-  margin-bottom: 1.25rem;
-  text-align: center;
-  transition: all 0.4s;
-  transform: translateY(20px);
-  opacity: 0;
-}
-.sc-category.in-view {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.sc-title {
-  font-weight: 700;
-  font-size: 4rem;
-  line-height: 1.1875;
-  color: #0C0D0F;
-  margin-bottom: 1.125rem;
-  text-align: center;
-  transition: all 0.4s;
-  transform: translateY(20px);
-  opacity: 0;
-}
-.sc-title.in-view {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.sc-desc {
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #7B808F;
-  text-align: center;
-  transition: all 0.4s;
-  transform: translateY(20px);
-  opacity: 0;
-}
-.sc-desc.in-view {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
 .link-store {
   position: relative;
   width: 17.125rem;
@@ -515,6 +468,74 @@ main.main .sc-proxy .content-01 .bubble:nth-of-type(1) {
   background-color: #3778FE;
   -webkit-clip-path: polygon(0% 52.037%, 0% 52.037%, 0.049% 50.766%, 0.195% 49.507%, 0.435% 48.265%, 0.769% 47.044%, 1.195% 45.848%, 1.71% 44.681%, 2.313% 43.549%, 3.003% 42.454%, 3.778% 41.403%, 4.636% 40.398%, 34.636% 7.67%, 34.636% 7.67%, 37.223% 5.315%, 40.134% 3.483%, 43.288% 2.175%, 46.604% 1.39%, 50% 1.128%, 53.396% 1.39%, 56.712% 2.175%, 59.866% 3.483%, 62.777% 5.315%, 65.364% 7.67%, 95.364% 40.398%, 95.364% 40.398%, 96.222% 41.403%, 96.997% 42.454%, 97.687% 43.549%, 98.29% 44.681%, 98.805% 45.848%, 99.231% 47.044%, 99.565% 48.265%, 99.805% 49.507%, 99.951% 50.766%, 100% 52.037%, 100% 81.818%, 100% 81.818%, 99.738% 84.767%, 98.98% 87.565%, 97.768% 90.174%, 96.141% 92.556%, 94.142% 94.675%, 91.812% 96.492%, 89.191% 97.971%, 86.322% 99.073%, 83.244% 99.762%, 80% 100%, 20% 100%, 20% 100%, 16.756% 99.762%, 13.678% 99.073%, 10.809% 97.971%, 8.188% 96.492%, 5.858% 94.675%, 3.859% 92.556%, 2.232% 90.174%, 1.02% 87.565%, 0.262% 84.767%, 0% 81.818%, 0% 52.037%);
           clip-path: polygon(0% 52.037%, 0% 52.037%, 0.049% 50.766%, 0.195% 49.507%, 0.435% 48.265%, 0.769% 47.044%, 1.195% 45.848%, 1.71% 44.681%, 2.313% 43.549%, 3.003% 42.454%, 3.778% 41.403%, 4.636% 40.398%, 34.636% 7.67%, 34.636% 7.67%, 37.223% 5.315%, 40.134% 3.483%, 43.288% 2.175%, 46.604% 1.39%, 50% 1.128%, 53.396% 1.39%, 56.712% 2.175%, 59.866% 3.483%, 62.777% 5.315%, 65.364% 7.67%, 95.364% 40.398%, 95.364% 40.398%, 96.222% 41.403%, 96.997% 42.454%, 97.687% 43.549%, 98.29% 44.681%, 98.805% 45.848%, 99.231% 47.044%, 99.565% 48.265%, 99.805% 49.507%, 99.951% 50.766%, 100% 52.037%, 100% 81.818%, 100% 81.818%, 99.738% 84.767%, 98.98% 87.565%, 97.768% 90.174%, 96.141% 92.556%, 94.142% 94.675%, 91.812% 96.492%, 89.191% 97.971%, 86.322% 99.073%, 83.244% 99.762%, 80% 100%, 20% 100%, 20% 100%, 16.756% 99.762%, 13.678% 99.073%, 10.809% 97.971%, 8.188% 96.492%, 5.858% 94.675%, 3.859% 92.556%, 2.232% 90.174%, 1.02% 87.565%, 0.262% 84.767%, 0% 81.818%, 0% 52.037%);
+}
+
+.select-box {
+  width: 100%;
+  max-width: 72.5rem;
+  border: 1px solid #D3DCE5;
+  border-radius: 6px;
+  min-height: 50px;
+  padding: 13px 16px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #0C0D0F;
+  position: relative;
+  cursor: pointer;
+}
+.select-box::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url("../images/icon/ico-down.svg") no-repeat center/cover;
+}
+.select-box > span {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.select-box-options {
+  position: fixed;
+  width: 100%;
+  flex-direction: column;
+  width: 100%;
+  max-width: 72.5rem;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0px 6px 12px 0px rgba(212, 214, 217, 0.45);
+  border-radius: 6px;
+  border: 1px solid #D3DCE5;
+  opacity: 1;
+  transform: translateY(10px);
+  transition: transform 0.2s, opacity 0.2s;
+  display: none;
+}
+.select-box-options.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+.select-box-options li {
+  padding: 13px 16px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0C0D0F;
+  transition: 0.2s;
+}
+.select-box-options li.select, .select-box-options li:hover {
+  color: #3778FE;
 }
 
 header#header {
@@ -645,6 +666,50 @@ main.main .link-box {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+}
+main.main .sc-category {
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #3778FE;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  transition: all 0.4s;
+  transform: translateY(20px);
+  opacity: 0;
+}
+main.main .sc-category.in-view {
+  transform: translateY(0px);
+  opacity: 1;
+}
+main.main .sc-title {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1875;
+  color: #0C0D0F;
+  margin-bottom: 1.125rem;
+  text-align: center;
+  transition: all 0.4s;
+  transform: translateY(20px);
+  opacity: 0;
+}
+main.main .sc-title.in-view {
+  transform: translateY(0px);
+  opacity: 1;
+}
+main.main .sc-desc {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #7B808F;
+  text-align: center;
+  transition: all 0.4s;
+  transform: translateY(20px);
+  opacity: 0;
+}
+main.main .sc-desc.in-view {
+  transform: translateY(0px);
+  opacity: 1;
 }
 main.main .sc-visual {
   position: relative;
@@ -924,4 +989,23 @@ main.main .title-box {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.privacy {
+  padding: 90px 0 160px;
+}
+.privacy .inner {
+  max-width: 72.5rem;
+  margin: 0 auto;
+}
+.privacy .inner .sc-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 54px;
+  color: #0C0D0F;
+  margin-bottom: 50px;
+}
+.privacy .inner .select-box {
+  width: 100%;
+  margin-bottom: 90px;
 }/*# sourceMappingURL=style.css.map */
