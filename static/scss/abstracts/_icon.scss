@@ -33,3 +33,31 @@ i {
     object-fit: contain
   }
 }
+
+.ico-arrow {
+  width: pxTorem(40px);
+  aspect-ratio: 1 / 1;
+
+  &.blue {
+    background: url('../images/icon/ico-arrow-blue.svg') no-repeat center / cover;
+  }
+
+  &.mint {
+    background: url('../images/icon/ico-arrow-mint.svg') no-repeat center / cover;
+  }
+}
+
+.ico-article {
+  &.big {
+    width: pxTorem(120px);
+    aspect-ratio: 1 / 1;
+
+    &.home {
+      background: url('../images/icon/ico-home-lg.svg') no-repeat center / cover;
+    }
+
+    &.mint {
+      background: url('../images/icon/ico-home-mint-lg.svg') no-repeat center / cover;
+    }
+  }
+}

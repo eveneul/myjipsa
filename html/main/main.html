@@ -6,17 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>마이집사</title>
+  <!-- Start:: 공통 CSS 또는 스크립트 파일 -->
   <link rel="stylesheet" href="../../static/css/style.css" />
-  <link rel="stylesheet" href="../../static/css/plugin/swiper.min.css" />
-  <link rel="stylesheet" href="../../static/css/plugin/swiper-bundle.min.css" />
   <script defer src="../../static/js/plugin/lenis.min.js"></script>
   <script defer src="../../static/js/plugin/gsap.min.js"></script>
   <script defer src="../../static/js/plugin/ScrollTrigger.min.js"></script>
   <script defer src="../../static/js/plugin/swiper-bundle.min.js"></script>
-  <script defer src="../../static/js/main/main.js"></script>
+  <script defer src="../../static/js/plugin/jquery-3.4.1.min.js"></script>
+  <script defer src="../../static/js/common.js" type="module"></script>
+
+  <!-- End:: 공통 CSS 또는 스크립트 파일 -->
+
+  <script defer src="../../static/js/main/main.js" type="module"></script>
 </head>
 
 <body>
+  <!-- Start:: Header -->
   <header id="header">
     <a href="/">
       <h1 class="logo">
@@ -31,6 +36,8 @@
       </ul>
     </nav>
   </header>
+  <!-- End:: Header -->
+
   <main id="container" class="main">
     <section class="sc-visual">
       <div class="video-box">
@@ -63,162 +70,181 @@
         <p class="sc-desc">네이버부동산, 직방, 다방의 매물을 마이집사 공인중개사가 직접 확인하고 리포트 해드립니다.</p>
       </div>
       <div class="content-box">
-        <ul class="content-list ">
-          <li class="content-item content-01 ">
-            <div class="content-text-box">
-              <i class="ico-ttl">
-                <img src="../../static/images/icon/ico-ttl-01.svg" alt="1">
-              </i>
-              <div class="text-box">
-                <em>무료 의뢰 서비스</em>
-                <p class="pc-only">무료로 서비스 신청이 가능하고<br />추후 계약 시 마이집사 중개사와 동행합니다.</p>
-                <p class="mo-only">무료로 서비스 신청이 가능하고 추후 계약 시<br />마이집사 중개사와 동행합니다.</p>
-              </div>
+        <div class="pagination-box">
+          <ul class="pagination-list">
+            <li class="pagination-item active"></li>
+            <li class="pagination-item"></li>
+            <li class="pagination-item"></li>
+            <li class="pagination-item"></li>
+          </ul>
+        </div>
+        <div class="content-text-box">
+          <div class="content-text">
+            <i class="ico-ttl">
+              <img src="../../static/images/icon/ico-ttl-01.svg" alt="1">
+            </i>
+            <div class="text-box">
+              <em>무료 의뢰 서비스</em>
+              <p class="pc-only">무료로 서비스 신청이 가능하고<br />추후 계약 시 마이집사 중개사와 동행합니다.</p>
+              <p class="mo-only">무료로 서비스 신청이 가능하고 추후 계약 시<br />마이집사 중개사와 동행합니다.</p>
             </div>
-            <div class="content-img-box">
-              <div class="mockup-box">
-                <img src="../../static/images/image/img-phone-mockup.png" alt="무료 의뢰 서비스">
-                <div class="mockup-inner">
-                  <div class="header">
-                    <div class="status-bar"></div>
-                    <div class="nav-bar"></div>
-                  </div>
-                  <div class="content">
-                    <i class="ico-profile"></i>
-                    <div class="bubble"><span>어디서 매물을 보셨나요?</span></div>
-                    <div class="bubble">
-                      <ul class="list">
-                        <li>네이버 부동산</li>
-                        <li>다방</li>
-                        <li>직방</li>
-                        <li>KB부동산</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="content-text">
+            <i class="ico-ttl">
+              <img src="../../static/images/icon/ico-ttl-02.svg" alt="2">
+            </i>
+            <div class="text-box">
+              <em>매물 확인 서비스</em>
+              <p>네이버부동산, 직방, 다방의 매물 번호를<br />인식하여 해당 매물을 재확인합니다.</p>
+            </div>
+          </div>
+          <div class="content-text">
+            <i class="ico-ttl">
+              <img src="../../static/images/icon/ico-ttl-03.svg" alt="3">
+            </i>
+            <div class="text-box">
+              <em>실질적인 매물 정보</em>
+              <p class="pc-only">플랫폼에 올라와 있는 꾸며진 사진이 아닌<br />실질적인 매물의 사진과 상태를 리포팅 해드립니다.</p>
+              <p class="mo-only">플랫폼에 올라와 있는 꾸며진<br />사진이 아닌 실질적인 매물의 사진과 상태를 <br />리포팅 해드립니다.</p>
+            </div>
+          </div>
+          <div class="content-text">
+            <i class="ico-ttl">
+              <img src="../../static/images/icon/ico-ttl-04.svg" alt="아이콘" aria-hidden>
+            </i>
+            <div class="text-box">
+              <em>중개사 동행 서비스</em>
+              <p>마이집사 중개사의 리포팅 확인 후<br />계약의사가 있을 경우 중개사와 함께 보러가고<br />계약까지 한번에 해결하세요!</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-img-box">
+          <div class="mockup-box">
+            <img src="../../static/images/image/img-phone-mockup.png" alt="" aria-hidden>
+            <div class="mockup-inner">
+              <img src="../../static/images/image/img-phone-1.png" alt="" aria-hidden class="active">
+              <img src="../../static/images/image/img-phone-2.png" alt="" aria-hidden class="">
+              <img src="../../static/images/image/img-phone-3.png" alt="" aria-hidden class="">
+              <img src="../../static/images/image/img-phone-4.png" alt="" aria-hidden class="">
 
             </div>
-          </li>
-          <li class="content-item content-02 ">
-            <div class="content-text-box">
-              <i class="ico-ttl">
-                <img src="../../static/images/icon/ico-ttl-02.svg" alt="2">
-              </i>
-              <div class="text-box">
-                <em>매물 확인 서비스</em>
-                <p>네이버부동산, 직방, 다방의 매물 번호를<br />인식하여 해당 매물을 재확인합니다.</p>
-              </div>
-            </div>
-            <div class="content-img-box">
-              <div class="mockup-box">
-                <img src="../../static/images/image/img-phone-mockup.png" alt="무료 의뢰 서비스">
-                <div class="mockup-inner">
-                  <div class="header">
-                    <div class="status-bar"></div>
-                    <div class="nav-bar"></div>
-                  </div>
-                  <div class="content">
-                    <i class="ico-profile"></i>
-                    <div class="bubble"><span>어디서 매물을 보셨나요?</span></div>
-                    <div class="bubble">
-                      <ul class="list">
-                        <li>네이버 부동산</li>
-                        <li>다방</li>
-                        <li>직방</li>
-                        <li>KB부동산</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
 
-            </div>
-          </li>
-          <li class="content-item content-03 ">
-            <div class="content-text-box">
-              <i class="ico-ttl">
-                <img src="../../static/images/icon/ico-ttl-03.svg" alt="3">
-              </i>
-              <div class="text-box">
-                <em>실질적인 매물 정보</em>
-                <p class="pc-only">플랫폼에 올라와 있는 꾸며진 사진이 아닌<br />실질적인 매물의 사진과 상태를 리포팅 해드립니다.</p>
-                <p class="mo-only">플랫폼에 올라와 있는 꾸며진<br />사진이 아닌 실질적인 매물의 사진과 상태를 <br />리포팅 해드립니다.</p>
-              </div>
-            </div>
-            <div class="content-img-box">
-              <div class="mockup-box">
-                <img src="../../static/images/image/img-phone-mockup.png" alt="실질적인 매물 정보" aria-hidden="true">
-                <div class="mockup-inner">
-                  <div class="header">
-                    <div class="status-bar"></div>
-                    <div class="nav-bar"></div>
-                  </div>
-                  <div class="content">
-                    <i class="ico-profile"></i>
-                    <div class="bubble"><span>어디서 매물을 보셨나요?</span></div>
-                    <div class="bubble">
-                      <ul class="list">
-                        <li>네이버 부동산</li>
-                        <li>다방</li>
-                        <li>직방</li>
-                        <li>KB부동산</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </li>
-          <li class="content-item content-04 ">
-            <div class="content-text-box">
-              <i class="ico-ttl">
-                <img src="../../static/images/icon/ico-ttl-04.svg" alt="아이콘" aria-hidden>
-              </i>
-              <div class="text-box">
-                <em>중개사 동행 서비스</em>
-                <p>마이집사 중개사의 리포팅 확인 후<br />계약의사가 있을 경우 중개사와 함께 보러가고<br />계약까지 한번에 해결하세요!</p>
-              </div>
-            </div>
-            <div class="content-img-box">
-              <div class="mockup-box">
-                <img src="../../static/images/image/img-phone-mockup.png" alt="중개사 동행 서비스">
-                <div class="mockup-inner">
-                  <div class="header">
-                    <div class="status-bar"></div>
-                    <div class="nav-bar"></div>
-                  </div>
-                  <div class="content">
-                    <i class="ico-profile"></i>
-                    <div class="bubble"><span>어디서 매물을 보셨나요?</span></div>
-                    <div class="bubble">
-                      <ul class="list">
-                        <li>네이버 부동산</li>
-                        <li>다방</li>
-                        <li>직방</li>
-                        <li>KB부동산</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </li>
-        </ul>
       </div>
+
     </section>
+
     <section class="sc-visit">
       <div class="title-box">
         <em class="sc-category">집보러오세요</em>
         <h2 class="sc-title">내가 원하는 날에 편하게 집보러가요</h2>
         <p class="sc-desc">중개사 별도 연락없이 원하는 매물을 내가 가능한 일정에 임장할 수 있습니다.</p>
+
       </div>
+      <div class="content-box">
+        <div class="pagination-box">
+          <ul class="pagination-list">
+            <li class="pagination-item active"></li>
+            <li class="pagination-item"></li>
+            <li class="pagination-item"></li>
+          </ul>
+        </div>
+        <ul class="content-list">
+          <li class="content-item step-1 active">
+            <div class="figure-box"></div>
+            <div class="text-box">
+              <em>일자별 임장가능한 매물</em>
+              <p>내가 원하는 일자에 임장이<br />가능한 매물을 선택하고 방문하세요.</p>
+            </div>
+          </li>
+          <li class="content-item step-2">
+            <div class="figure-box"></div>
+            <div class="text-box">
+              <em>집주인과 직접 흥정</em>
+              <p>채팅을 통해 비대면으로 집주인과<br />빠른 가격 및 조건 협의</p>
+            </div>
+          </li>
+          <li class="content-item step-3">
+            <div class="figure-box"></div>
+            <div class="text-box">
+              <em>안전한 거래와 대출연계</em>
+              <p>마이집사 공인중개사를 통한<br />안전한 부동산 거래 중개와 대출연계</p>
+            </div>
+          </li>
+          <li class="content-item step-4">
+            <div class="figure-box"></div>
+            <div class="text-box">
+              <em>복잡한 부동산 계약<br />마이집사에게 부탁해 보세요.</em>
+              <div class="link-box">
+                <a href="" class="link-store">
+                  <i class="ico-apple"></i>
+                  <span>App Store</span>
+                </a>
+                <a href="" class="link-store">
+                  <i class="ico-google"></i>
+                  <span>Google Store</span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
     </section>
-    <section class="sc-inquiry"></section>
+    <section class="sc-inquiry">
+      <h2 class="hidden">마이집사 제휴, 광고, 중개파트너 문의하기</h2>
+      <ul class="inquiry-list">
+        <li class="inquiry-item">
+          <a href="">
+            <i class="ico-article big home"></i>
+            <div class="text-box blue">
+              <span>마이집사</span>
+              <span>제휴 및 광고관련 문의 <i class="ico-arrow blue"></i></span>
+            </div>
+          </a>
+        </li>
+        <li class="inquiry-item">
+          <a href="">
+            <i class="ico-article big mint"></i>
+            <div class="text-box mint">
+              <span>마이집사</span>
+              <span>중개파트너 문의 <i class="ico-arrow mint"></i></span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
   </main>
-  <footer id="footer"></footer>
+  <!-- Start:: Footer -->
+
+  <footer id="footer">
+    <h3 class="footer-logo">
+      <span>마이집사</span>
+      <span>주식회사 집플렉스</span>
+    </h3>
+    <div class="footer-link">
+      <a href="">개인정보처리방침</a>
+      <a href="">서비스 이용약관</a>
+    </div>
+    <address class="footer-address">
+      <div class="footer-address-inner">
+        <div>
+          <span>대표: 김현수</span>
+          <span>사업자등록번호: 735-86-02980</span>
+          <span>E-mail : yujinkhs@naver.com</span>
+        </div>
+        <div>
+          <span>고객센터 주소: (04073) 서울시 마포구 어울마당로3길 5-8 4층</span>
+          <span>고객센터: 02.853.6582</span>
+        </div>
+      </div>
+      <span class="footer-copy">Copyright Zipflex, All rights reserverd.</span>
+    </address>
+  </footer>
+  <!-- End:: Footer -->
+
 </body>
 
 </html>

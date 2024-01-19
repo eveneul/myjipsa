@@ -1,0 +1,86 @@
+footer {
+  padding: pxTorem(50px);
+  border-top: 2px solid $line-03;
+
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: pxTorem(40px);
+
+    span {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-weight: 600;
+      font-size: pxTorem(16px);
+      color: $text-05;
+      letter-spacing: 0.16px;
+
+      +span {
+        &::before {
+          content: '';
+          display: block;
+          width: 1px;
+          height: pxTorem(14px);
+          background-color: $line-04;
+          margin: 0 pxTorem(10px);
+        }
+      }
+    }
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: pxTorem(20px);
+
+    a {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: pxTorem(14px);
+      line-height: 1;
+      color: $text-05;
+
+      +a {
+        margin-left: pxTorem(16px);
+      }
+    }
+  }
+
+  .footer-address {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &-inner {
+      >div {
+        display: flex;
+        align-items: center;
+
+        +div {
+          margin-top: pxTorem(6px);
+        }
+      }
+
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 300;
+        font-size: pxTorem(13px);
+        color: $text-03;
+
+        +span {
+          margin-left: pxTorem(14px);
+        }
+      }
+    }
+  }
+
+  .footer-copy {
+    font-weight: 300;
+    font-size: pxTorem(13px);
+    color: $text-03;
+  }
+}

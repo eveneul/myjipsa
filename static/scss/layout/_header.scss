@@ -8,6 +8,9 @@ header#header {
   justify-content: space-between;
   align-items: center;
   z-index: 1004;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+  transform: translateY(0%);
 
   a {
     width: pxTorem(150px);
@@ -35,11 +38,28 @@ header#header {
         font-weight: 600;
         font-size: pxTorem(20px);
         color: $white;
+        transition: all 0.3s;
 
         +li {
           margin-left: pxTorem(40px);
         }
       }
     }
+  }
+
+  &.scroll {
+    background-color: $white;
+    border-bottom: 1px solid $line-03;
+
+
+    nav {
+      li {
+        color: $text-05;
+      }
+    }
+  }
+
+  &.down {
+    transform: translateY(-100%);
   }
 }

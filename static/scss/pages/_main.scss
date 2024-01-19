@@ -1,4 +1,9 @@
 main.main {
+  .link-box {
+    display: flex;
+    align-items: center;
+    gap: pxTorem(20px);
+  }
 
   .sc {
     &-visual {
@@ -45,6 +50,7 @@ main.main {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          transition-delay: 0.2s;
 
           span {
             font-weight: 700;
@@ -55,41 +61,58 @@ main.main {
 
           }
         }
+
       }
 
       .link-box {
-        display: flex;
-        align-items: center;
-        gap: pxTorem(20px);
+        opacity: 0;
+        transform: translateY(20px);
+        transition-delay: all 0.2s 0.4s;
+
+        &.in-view {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+
       }
+
+
     }
 
     &-proxy {
+      position: relative;
       padding: pxTorem(250px) 0 pxTorem(153px);
+      // height: 400vh;
 
       .content-box {
         width: 100%;
+        position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
         height: 100vh;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
 
-        .content-list {
-          max-width: pxTorem(1160px);
-        }
+        .content-text-box {
+          position: relative;
+          width: pxTorem(510px);
 
-        .content-item {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
+          .content-text {
+            // height: 100%;
 
-
-          .content-text-box {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(0%);
             display: flex;
             align-items: flex-start;
+            opacity: 0;
 
-
+            &.active {
+              opacity: 1;
+              transform: translateY(-50%);
+            }
 
             em {
               font-weight: 700;
@@ -109,12 +132,261 @@ main.main {
 
             }
           }
+
+
         }
+
+        .content-img-box {
+          display: flex;
+          align-items: center;
+        }
+
+
+        // .content-list {
+        //   max-width: pxTorem(1160px);
+
+        //   // overflow: hidden;
+        // }
+
+        // .content-item {
+        //   display: flex;
+        //   align-items: center;
+        //   justify-content: space-between;
+        //   width: 100%;
+
+
+
+        //   .content-text-box {
+
+
+
+
+
+        //   }
+        // }
       }
+
     }
 
     &-visit {
-      padding: pxToerm(153px) 0 0;
+      padding: pxTorem(153px) 0 0;
+
+      .title-box {
+        margin-bottom: pxTorem(204px);
+      }
+
+      .content-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        border: 1px solid red;
+      }
+
+      .content-list {
+        position: relative;
+
+      }
+
+      .content-item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        opacity: 0;
+        transition: all 0.4s;
+
+        &.active {
+          opacity: 1;
+
+          .text-box {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+          }
+        }
+
+        .figure-box {
+          position: relative;
+          transition: all 0.6s;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 0.5s;
+          }
+
+
+        }
+
+        .text-box {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -30%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          opacity: 0;
+          transition: all 0.4s 0.2s;
+
+          em {
+            text-align: center;
+            font-weight: 700;
+            font-size: pxTorem(50px);
+            line-height: calc(72/50);
+            color: $white;
+
+          }
+
+          p {
+            text-align: center;
+            margin-top: pxTorem(12px);
+            font-weight: 600;
+            font-size: pxTorem(22px);
+            line-height: calc(34 / 22);
+            color: $white;
+          }
+        }
+
+        &.step-1 {
+          .figure-box {
+            width: pxTorem(640px);
+            height: pxTorem(640px);
+            clip-path: polygon(0.075% 43.947%, 0.075% 43.947%, 0.126% 42.786%, 0.279% 41.641%, 0.531% 40.515%, 0.881% 39.416%, 1.328% 38.35%, 1.868% 37.321%, 2.501% 36.336%, 3.225% 35.402%, 4.037% 34.523%, 4.936% 33.706%, 40.165% 3.549%, 40.165% 3.549%, 41.909% 2.271%, 43.797% 1.278%, 45.792% 0.568%, 47.859% 0.142%, 49.963% 0%, 52.066% 0.142%, 54.133% 0.568%, 56.129% 1.278%, 58.016% 2.271%, 59.761% 3.549%, 95.138% 33.706%, 95.138% 33.706%, 96.02% 34.523%, 96.822% 35.402%, 97.541% 36.336%, 98.174% 37.321%, 98.719% 38.35%, 99.172% 39.416%, 99.529% 40.515%, 99.789% 41.641%, 99.947% 42.786%, 100% 43.947%, 100% 86.158%, 100% 86.158%, 99.808% 88.399%, 99.251% 90.526%, 98.36% 92.511%, 97.166% 94.325%, 95.699% 95.939%, 93.99% 97.324%, 92.069% 98.452%, 89.967% 99.293%, 87.714% 99.818%, 85.34% 100%, 14.66% 100%, 14.66% 100%, 12.286% 99.818%, 10.033% 99.293%, 7.931% 98.452%, 6.01% 97.324%, 4.301% 95.939%, 2.834% 94.325%, 1.64% 92.511%, 0.749% 90.526%, 0.192% 88.399%, 0% 86.158%, 0% 43.947%, 0.075% 43.947%);
+            background-image: url('../images/image/img-visit-1.png');
+
+            &::before {
+              background-color: rgba(26, 101, 255, 0.7);
+            }
+          }
+        }
+
+        &.step-2 {
+          .figure-box {
+            width: pxTorem(640px);
+            height: pxTorem(640px);
+            clip-path: circle(50% at 50% 50%);
+            background-image: url('../images/image/img-visit-2.png');
+
+            &::before {
+              background-color: rgba(0, 190, 183, 0.7);
+            }
+          }
+        }
+
+        &.step-3 {
+          .figure-box {
+            width: pxTorem(640px);
+            height: pxTorem(640px);
+            clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
+            background-image: url('../images/image/img-visit-3.png');
+
+            &::before {
+              background-color: rgba(26, 101, 255, 0.7)
+            }
+          }
+        }
+
+        &.step-4 {
+          .figure-box {
+            width: pxTorem(640px);
+            height: pxTorem(640px);
+            clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
+            background-image: url('../images/image/img-visit-4.png');
+          }
+
+
+          &.wide {
+            opacity: 1;
+
+
+            .figure-box {
+              width: 100vw;
+              height: 100vh;
+              clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            .text-box {
+              opacity: 1;
+              transform: translate(-50%, -50%);
+
+            }
+
+
+
+          }
+        }
+
+
+      }
+
+
+    }
+
+    &-inquiry {
+      padding: pxTorem(180px) 0 pxTorem(136px);
+
+      .inquiry-list {
+        width: 100%;
+        max-width: pxTorem(1280px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+
+
+      }
+
+      .inquiry-item {
+
+
+
+        a {
+          display: flex;
+          align-items: center;
+        }
+
+        .text-box {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-weight: 700;
+            font-size: pxTorem(36px);
+            line-height: calc(52 / 38);
+            display: flex;
+            align-items: center;
+            color: $main-blue;
+
+            i {
+              margin-left: pxTorem(4px);
+            }
+          }
+
+          &.mint {
+            span {
+              color: $main-mint;
+            }
+          }
+        }
+
+      }
     }
   }
 

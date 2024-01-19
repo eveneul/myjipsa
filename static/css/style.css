@@ -58,6 +58,28 @@ i {
      object-fit: contain;
 }
 
+.ico-arrow {
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+}
+.ico-arrow.blue {
+  background: url("../images/icon/ico-arrow-blue.svg") no-repeat center/cover;
+}
+.ico-arrow.mint {
+  background: url("../images/icon/ico-arrow-mint.svg") no-repeat center/cover;
+}
+
+.ico-article.big {
+  width: 7.5rem;
+  aspect-ratio: 1/1;
+}
+.ico-article.big.home {
+  background: url("../images/icon/ico-home-lg.svg") no-repeat center/cover;
+}
+.ico-article.big.mint {
+  background: url("../images/icon/ico-home-mint-lg.svg") no-repeat center/cover;
+}
+
 /* ************************************** *
  * Prestandard
  * ************************************** */
@@ -359,6 +381,13 @@ ol {
   color: #3778FE;
   margin-bottom: 1.25rem;
   text-align: center;
+  transition: all 0.4s;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.sc-category.in-view {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .sc-title {
@@ -368,6 +397,13 @@ ol {
   color: #0C0D0F;
   margin-bottom: 1.125rem;
   text-align: center;
+  transition: all 0.4s;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.sc-title.in-view {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .sc-desc {
@@ -376,6 +412,13 @@ ol {
   line-height: 1.6;
   color: #7B808F;
   text-align: center;
+  transition: all 0.4s;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.sc-desc.in-view {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .link-store {
@@ -423,68 +466,16 @@ ol {
   background-color: #F6F7F9;
   z-index: 1;
 }
-.mockup-inner .header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.mockup-inner .header .status-bar {
-  width: 100%;
-  aspect-ratio: 350.99/41.18;
-  background: url("../images/image/img-phone-status.png") no-repeat center/cover;
-}
-.mockup-inner .header .nav-bar {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 350.51/47.08;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.585rem 1.17rem;
-}
-.mockup-inner .header .nav-bar::before {
-  content: "";
-  display: block;
+.mockup-inner img {
+  position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../images/image/img-phone-nav.png") no-repeat center/contain;
+  transform: translateY(50px);
+  opacity: 0;
 }
-.mockup-inner .content {
-  padding: 0 1.25rem;
-}
-.mockup-inner .content .bubble {
-  padding: 0.701875rem 0.93625rem;
-  border-radius: 14.98px;
-  box-shadow: 0px 1.872px 1.872px 0px rgba(208, 212, 217, 0.16);
-  background-color: #fff;
-}
-.mockup-inner .content .bubble + .bubble {
-  margin-top: 0.468125rem;
-}
-.mockup-inner .content .bubble span {
-  font-weight: 400;
-  font-size: 0.81875rem;
-  color: #0C0D0F;
-}
-.mockup-inner .content .bubble .list {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0.701875rem 0.23375rem;
-}
-.mockup-inner .content .bubble .list li {
-  width: 100%;
-  padding: 0.93625rem 1.17rem;
-  border-radius: 11.2px;
-  background-color: #fff;
-  border: 1px solid #EBF0F5;
-  font-size: 1.4039375rem;
-  font-weight: 600;
-  letter-spacing: -0.225px;
-  color: #D8DFE5;
-}
-.mockup-inner .content .bubble .list li + li {
-  margin-top: 0.468125rem;
+.mockup-inner img.active {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 main.main .sc-proxy .content-01 .nav-bar {
@@ -495,6 +486,37 @@ main.main .sc-proxy .content-01 .bubble:nth-of-type(1) {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+.pagination-box {
+  position: absolute;
+  right: 3.125rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pagination-box .pagination-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-box .pagination-item {
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #E4E8ED;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  transition: all 0.5s;
+}
+.pagination-box .pagination-item + .pagination-item {
+  margin-top: 0.625rem;
+}
+.pagination-box .pagination-item.active {
+  width: 0.625rem;
+  height: 0.75rem;
+  background-color: #3778FE;
+  -webkit-clip-path: polygon(0% 52.037%, 0% 52.037%, 0.049% 50.766%, 0.195% 49.507%, 0.435% 48.265%, 0.769% 47.044%, 1.195% 45.848%, 1.71% 44.681%, 2.313% 43.549%, 3.003% 42.454%, 3.778% 41.403%, 4.636% 40.398%, 34.636% 7.67%, 34.636% 7.67%, 37.223% 5.315%, 40.134% 3.483%, 43.288% 2.175%, 46.604% 1.39%, 50% 1.128%, 53.396% 1.39%, 56.712% 2.175%, 59.866% 3.483%, 62.777% 5.315%, 65.364% 7.67%, 95.364% 40.398%, 95.364% 40.398%, 96.222% 41.403%, 96.997% 42.454%, 97.687% 43.549%, 98.29% 44.681%, 98.805% 45.848%, 99.231% 47.044%, 99.565% 48.265%, 99.805% 49.507%, 99.951% 50.766%, 100% 52.037%, 100% 81.818%, 100% 81.818%, 99.738% 84.767%, 98.98% 87.565%, 97.768% 90.174%, 96.141% 92.556%, 94.142% 94.675%, 91.812% 96.492%, 89.191% 97.971%, 86.322% 99.073%, 83.244% 99.762%, 80% 100%, 20% 100%, 20% 100%, 16.756% 99.762%, 13.678% 99.073%, 10.809% 97.971%, 8.188% 96.492%, 5.858% 94.675%, 3.859% 92.556%, 2.232% 90.174%, 1.02% 87.565%, 0.262% 84.767%, 0% 81.818%, 0% 52.037%);
+          clip-path: polygon(0% 52.037%, 0% 52.037%, 0.049% 50.766%, 0.195% 49.507%, 0.435% 48.265%, 0.769% 47.044%, 1.195% 45.848%, 1.71% 44.681%, 2.313% 43.549%, 3.003% 42.454%, 3.778% 41.403%, 4.636% 40.398%, 34.636% 7.67%, 34.636% 7.67%, 37.223% 5.315%, 40.134% 3.483%, 43.288% 2.175%, 46.604% 1.39%, 50% 1.128%, 53.396% 1.39%, 56.712% 2.175%, 59.866% 3.483%, 62.777% 5.315%, 65.364% 7.67%, 95.364% 40.398%, 95.364% 40.398%, 96.222% 41.403%, 96.997% 42.454%, 97.687% 43.549%, 98.29% 44.681%, 98.805% 45.848%, 99.231% 47.044%, 99.565% 48.265%, 99.805% 49.507%, 99.951% 50.766%, 100% 52.037%, 100% 81.818%, 100% 81.818%, 99.738% 84.767%, 98.98% 87.565%, 97.768% 90.174%, 96.141% 92.556%, 94.142% 94.675%, 91.812% 96.492%, 89.191% 97.971%, 86.322% 99.073%, 83.244% 99.762%, 80% 100%, 20% 100%, 20% 100%, 16.756% 99.762%, 13.678% 99.073%, 10.809% 97.971%, 8.188% 96.492%, 5.858% 94.675%, 3.859% 92.556%, 2.232% 90.174%, 1.02% 87.565%, 0.262% 84.767%, 0% 81.818%, 0% 52.037%);
+}
+
 header#header {
   position: fixed;
   top: 0;
@@ -505,6 +527,9 @@ header#header {
   justify-content: space-between;
   align-items: center;
   z-index: 1004;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+  transform: translateY(0%);
 }
 header#header a {
   width: 9.375rem;
@@ -529,11 +554,98 @@ header#header nav ul li {
   font-weight: 600;
   font-size: 1.25rem;
   color: #fff;
+  transition: all 0.3s;
 }
 header#header nav ul li + li {
   margin-left: 2.5rem;
 }
+header#header.scroll {
+  background-color: #fff;
+  border-bottom: 1px solid #E6EFF7;
+}
+header#header.scroll nav li {
+  color: #0C0D0F;
+}
+header#header.down {
+  transform: translateY(-100%);
+}
 
+footer {
+  padding: 3.125rem;
+  border-top: 2px solid #E6EFF7;
+}
+footer .footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+footer .footer-logo span {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0C0D0F;
+  letter-spacing: 0.16px;
+}
+footer .footer-logo span + span::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 0.875rem;
+  background-color: #D3DCE5;
+  margin: 0 0.625rem;
+}
+footer .footer-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+footer .footer-link a {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #0C0D0F;
+}
+footer .footer-link a + a {
+  margin-left: 1rem;
+}
+footer .footer-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer .footer-address-inner {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-address-inner > div {
+  display: flex;
+  align-items: center;
+}
+footer .footer-address-inner > div + div {
+  margin-top: 0.375rem;
+}
+footer .footer-address-inner span {
+  font-weight: 300;
+  font-size: 0.8125rem;
+  color: #7B808F;
+}
+footer .footer-address-inner span + span {
+  margin-left: 0.875rem;
+}
+footer .footer-copy {
+  font-weight: 300;
+  font-size: 0.8125rem;
+  color: #7B808F;
+}
+
+main.main .link-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 main.main .sc-visual {
   position: relative;
   width: 100%;
@@ -575,6 +687,7 @@ main.main .sc-visual .text-box .sc-title.big {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition-delay: 0.2s;
 }
 main.main .sc-visual .text-box .sc-title.big span {
   font-weight: 700;
@@ -584,34 +697,46 @@ main.main .sc-visual .text-box .sc-title.big span {
   letter-spacing: -0.62px;
 }
 main.main .sc-visual .link-box {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition-delay: all 0.2s 0.4s;
+}
+main.main .sc-visual .link-box.in-view {
+  opacity: 1;
+  transform: translateY(0px);
 }
 main.main .sc-proxy {
+  position: relative;
   padding: 15.625rem 0 9.5625rem;
 }
 main.main .sc-proxy .content-box {
   width: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
 }
-main.main .sc-proxy .content-box .content-list {
-  max-width: 72.5rem;
+main.main .sc-proxy .content-box .content-text-box {
+  position: relative;
+  width: 31.875rem;
 }
-main.main .sc-proxy .content-box .content-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-main.main .sc-proxy .content-box .content-item .content-text-box {
+main.main .sc-proxy .content-box .content-text-box .content-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(0%);
   display: flex;
   align-items: flex-start;
+  opacity: 0;
 }
-main.main .sc-proxy .content-box .content-item .content-text-box em {
+main.main .sc-proxy .content-box .content-text-box .content-text.active {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+main.main .sc-proxy .content-box .content-text-box .content-text em {
   font-weight: 700;
   font-size: 3.125rem;
   line-height: 1.4;
@@ -619,14 +744,180 @@ main.main .sc-proxy .content-box .content-item .content-text-box em {
   display: block;
   margin-bottom: 0.75rem;
 }
-main.main .sc-proxy .content-box .content-item .content-text-box p {
+main.main .sc-proxy .content-box .content-text-box .content-text p {
   font-weight: 400;
   font-size: 1.375rem;
   line-height: 1.4545454545;
   color: #0C0D0F;
 }
+main.main .sc-proxy .content-box .content-img-box {
+  display: flex;
+  align-items: center;
+}
 main.main .sc-visit {
-  padding: pxToerm(153px) 0 0;
+  padding: 9.5625rem 0 0;
+}
+main.main .sc-visit .title-box {
+  margin-bottom: 12.75rem;
+}
+main.main .sc-visit .content-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border: 1px solid red;
+}
+main.main .sc-visit .content-list {
+  position: relative;
+}
+main.main .sc-visit .content-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 0;
+  transition: all 0.4s;
+}
+main.main .sc-visit .content-item.active {
+  opacity: 1;
+}
+main.main .sc-visit .content-item.active .text-box {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+main.main .sc-visit .content-item .figure-box {
+  position: relative;
+  transition: all 0.6s;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main.main .sc-visit .content-item .figure-box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+main.main .sc-visit .content-item .text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s 0.2s;
+}
+main.main .sc-visit .content-item .text-box em {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3.125rem;
+  line-height: 1.44;
+  color: #fff;
+}
+main.main .sc-visit .content-item .text-box p {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 1.5454545455;
+  color: #fff;
+}
+main.main .sc-visit .content-item.step-1 .figure-box {
+  width: 40rem;
+  height: 40rem;
+  -webkit-clip-path: polygon(0.075% 43.947%, 0.075% 43.947%, 0.126% 42.786%, 0.279% 41.641%, 0.531% 40.515%, 0.881% 39.416%, 1.328% 38.35%, 1.868% 37.321%, 2.501% 36.336%, 3.225% 35.402%, 4.037% 34.523%, 4.936% 33.706%, 40.165% 3.549%, 40.165% 3.549%, 41.909% 2.271%, 43.797% 1.278%, 45.792% 0.568%, 47.859% 0.142%, 49.963% 0%, 52.066% 0.142%, 54.133% 0.568%, 56.129% 1.278%, 58.016% 2.271%, 59.761% 3.549%, 95.138% 33.706%, 95.138% 33.706%, 96.02% 34.523%, 96.822% 35.402%, 97.541% 36.336%, 98.174% 37.321%, 98.719% 38.35%, 99.172% 39.416%, 99.529% 40.515%, 99.789% 41.641%, 99.947% 42.786%, 100% 43.947%, 100% 86.158%, 100% 86.158%, 99.808% 88.399%, 99.251% 90.526%, 98.36% 92.511%, 97.166% 94.325%, 95.699% 95.939%, 93.99% 97.324%, 92.069% 98.452%, 89.967% 99.293%, 87.714% 99.818%, 85.34% 100%, 14.66% 100%, 14.66% 100%, 12.286% 99.818%, 10.033% 99.293%, 7.931% 98.452%, 6.01% 97.324%, 4.301% 95.939%, 2.834% 94.325%, 1.64% 92.511%, 0.749% 90.526%, 0.192% 88.399%, 0% 86.158%, 0% 43.947%, 0.075% 43.947%);
+          clip-path: polygon(0.075% 43.947%, 0.075% 43.947%, 0.126% 42.786%, 0.279% 41.641%, 0.531% 40.515%, 0.881% 39.416%, 1.328% 38.35%, 1.868% 37.321%, 2.501% 36.336%, 3.225% 35.402%, 4.037% 34.523%, 4.936% 33.706%, 40.165% 3.549%, 40.165% 3.549%, 41.909% 2.271%, 43.797% 1.278%, 45.792% 0.568%, 47.859% 0.142%, 49.963% 0%, 52.066% 0.142%, 54.133% 0.568%, 56.129% 1.278%, 58.016% 2.271%, 59.761% 3.549%, 95.138% 33.706%, 95.138% 33.706%, 96.02% 34.523%, 96.822% 35.402%, 97.541% 36.336%, 98.174% 37.321%, 98.719% 38.35%, 99.172% 39.416%, 99.529% 40.515%, 99.789% 41.641%, 99.947% 42.786%, 100% 43.947%, 100% 86.158%, 100% 86.158%, 99.808% 88.399%, 99.251% 90.526%, 98.36% 92.511%, 97.166% 94.325%, 95.699% 95.939%, 93.99% 97.324%, 92.069% 98.452%, 89.967% 99.293%, 87.714% 99.818%, 85.34% 100%, 14.66% 100%, 14.66% 100%, 12.286% 99.818%, 10.033% 99.293%, 7.931% 98.452%, 6.01% 97.324%, 4.301% 95.939%, 2.834% 94.325%, 1.64% 92.511%, 0.749% 90.526%, 0.192% 88.399%, 0% 86.158%, 0% 43.947%, 0.075% 43.947%);
+  background-image: url("../images/image/img-visit-1.png");
+}
+main.main .sc-visit .content-item.step-1 .figure-box::before {
+  background-color: rgba(26, 101, 255, 0.7);
+}
+main.main .sc-visit .content-item.step-2 .figure-box {
+  width: 40rem;
+  height: 40rem;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  background-image: url("../images/image/img-visit-2.png");
+}
+main.main .sc-visit .content-item.step-2 .figure-box::before {
+  background-color: rgba(0, 190, 183, 0.7);
+}
+main.main .sc-visit .content-item.step-3 .figure-box {
+  width: 40rem;
+  height: 40rem;
+  -webkit-clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
+          clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
+  background-image: url("../images/image/img-visit-3.png");
+}
+main.main .sc-visit .content-item.step-3 .figure-box::before {
+  background-color: rgba(26, 101, 255, 0.7);
+}
+main.main .sc-visit .content-item.step-4 .figure-box {
+  width: 40rem;
+  height: 40rem;
+  -webkit-clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
+          clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
+  background-image: url("../images/image/img-visit-4.png");
+}
+main.main .sc-visit .content-item.step-4.wide {
+  opacity: 1;
+}
+main.main .sc-visit .content-item.step-4.wide .figure-box {
+  width: 100vw;
+  height: 100vh;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+main.main .sc-visit .content-item.step-4.wide .text-box {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+main.main .sc-inquiry {
+  padding: 11.25rem 0 8.5rem;
+}
+main.main .sc-inquiry .inquiry-list {
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+main.main .sc-inquiry .inquiry-item a {
+  display: flex;
+  align-items: center;
+}
+main.main .sc-inquiry .inquiry-item .text-box {
+  display: flex;
+  flex-direction: column;
+}
+main.main .sc-inquiry .inquiry-item .text-box span {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.3684210526;
+  display: flex;
+  align-items: center;
+  color: #3778FE;
+}
+main.main .sc-inquiry .inquiry-item .text-box span i {
+  margin-left: 0.25rem;
+}
+main.main .sc-inquiry .inquiry-item .text-box.mint span {
+  color: #00B7BA;
 }
 main.main .title-box {
   display: flex;
