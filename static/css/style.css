@@ -1008,4 +1008,134 @@ main.main .title-box {
 .privacy .inner .select-box {
   width: 100%;
   margin-bottom: 90px;
+}
+.privacy .inner .privacy-box .privacy-title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.3125;
+  color: #0C0D0F;
+  margin-bottom: 2.125rem;
+}
+.privacy .inner .privacy-box .privacy-desc {
+  display: block;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #0C0D0F;
+  margin-bottom: 2.125rem;
+}
+.privacy .inner .privacy-box ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.privacy .inner .privacy-box ul li {
+  width: 100%;
+  display: flex;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #3D444D;
+}
+.privacy .inner .privacy-box ul li + li {
+  margin-top: 1.5rem;
+}
+.privacy .inner .privacy-box ul li .number {
+  margin-right: 0.5rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #3D444D;
+}
+.privacy .inner .privacy-box ul li .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.privacy .inner .privacy-box ul li .content > * {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #3D444D;
+}
+.privacy .inner .privacy-box ul li .content .desc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.privacy .inner .privacy-box ul li .content > ul {
+  margin-top: 1.5rem;
+}
+.privacy .inner .privacy-box ul li .content > ul li {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+}
+.privacy .inner .privacy-box ul li .content > ul li + li {
+  margin-top: 1rem;
+}
+.privacy .inner .privacy-box + .privacy-box {
+  margin-top: 3.75rem;
+}
+.privacy .inner .privacy-box .sub-desc {
+  margin-top: 1rem;
+}
+.privacy .inner .privacy-box table {
+  width: 100%;
+  border-top: 1px solid #000;
+  /* Border */
+}
+.privacy .inner .privacy-box table th,
+.privacy .inner .privacy-box table td {
+  padding: 1rem 0;
+}
+.privacy .inner .privacy-box table th {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #0C0D0F;
+}
+.privacy .inner .privacy-box table td {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #0C0D0F;
+}
+.privacy .inner .privacy-box table td ul {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #0C0D0F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+}
+.privacy .inner .privacy-box table td ul li {
+  display: flex;
+  margin: 0;
+  text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.privacy .inner .privacy-box table td ul li .dot {
+  width: 4px;
+  height: 4px;
+  margin-top: 9px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-color: #3D444D;
+}
+.privacy .inner .privacy-box table tr {
+  border-bottom: 1px solid #E6EFF7;
+}
+.privacy .inner .privacy-box table td + td,
+.privacy .inner .privacy-box table td + th,
+.privacy .inner .privacy-box table th + td,
+.privacy .inner .privacy-box table th + th {
+  border-left: 1px solid #E6EFF7;
+}
+.privacy .mt-5 {
+  margin-top: 5px;
 }/*# sourceMappingURL=style.css.map */
