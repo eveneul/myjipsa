@@ -20,6 +20,9 @@
 
 
     .privacy-box {
+
+
+
       .privacy-title {
         font-weight: 600;
         font-size: pxTorem(32px);
@@ -185,6 +188,39 @@
           }
 
         }
+      }
+
+      .section-title {
+        font-weight: 600;
+        font-size: pxTorem(32px);
+        margin-bottom: pxTorem(50px);
+        color: $text-05;
+      }
+
+      article {
+        +article {
+          margin-top: pxTorem(60px);
+        }
+
+        .article-title {
+          font-weight: 600;
+          font-size: pxTorem(24px);
+          line-height: calc(34 / 24);
+          color: $text-05;
+          margin-bottom: pxTorem(34px);
+        }
+
+        p {
+          font-weight: 400;
+          font-size: pxTorem(18px);
+          line-height: calc(26 / 18);
+          color: $text-04;
+
+          +ul {
+            margin-top: pxTorem(34px);
+          }
+        }
+
       }
     }
   }

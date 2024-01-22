@@ -1136,6 +1136,31 @@ main.main .title-box {
 .privacy .inner .privacy-box table th + th {
   border-left: 1px solid #E6EFF7;
 }
+.privacy .inner .privacy-box .section-title {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 3.125rem;
+  color: #0C0D0F;
+}
+.privacy .inner .privacy-box article + article {
+  margin-top: 3.75rem;
+}
+.privacy .inner .privacy-box article .article-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.4166666667;
+  color: #0C0D0F;
+  margin-bottom: 2.125rem;
+}
+.privacy .inner .privacy-box article p {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  color: #3D444D;
+}
+.privacy .inner .privacy-box article p + ul {
+  margin-top: 2.125rem;
+}
 .privacy .mt-5 {
   margin-top: 5px;
 }/*# sourceMappingURL=style.css.map */

@@ -27,11 +27,4 @@ $(".select-box-option").click(function (e) {
   $(".select-box span").text(value)
   $(".select-box-options").removeClass("active")
 })
-
-$("body").click(function(e) {
-  if ($(".select-box-options").hasClass("active")) {
-    if (!$(e.target).is(".select-box-options, .select-box-option")) {
-      $(".select-box-options").removeClass("active");
-    }
-  }
-});
+ 
