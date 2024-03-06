@@ -37,7 +37,6 @@
     position: fixed;
     width: 100%;
     flex-direction: column;
-    width: 100%;
     max-width: pxTorem(1160px);
     // display: none;
     display: flex;
@@ -49,6 +48,11 @@
     transform: translateY(10px);
     transition: transform 0.2s, opacity 0.2s;
     display: none;
+
+    @include tablet {
+      max-width: 100%;
+
+    }
 
     &.active {
       display: flex;

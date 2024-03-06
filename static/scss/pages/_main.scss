@@ -1,8 +1,24 @@
 main.main {
+
+  position: relative;
+
+  @include tablet {
+    // display: none;
+    overflow: hidden;
+  }
+
   .link-box {
     display: flex;
     align-items: center;
     gap: pxTorem(20px);
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: pxTorem(12px);
+    }
   }
 
   .sc-category {
@@ -12,14 +28,16 @@ main.main {
     color: $main-blue;
     margin-bottom: pxTorem(20px);
     text-align: center;
-    transition: all 0.4s;
-    transform: translateY(20px);
-    opacity: 0;
 
-    &.in-view {
-      transform: translateY(0px);
-      opacity: 1;
+
+    @include tablet {
+      font-size: pxTorem(16px);
+      margin-bottom: pxTorem(6px);
     }
+
+
+
+
   }
 
   .sc-title {
@@ -29,13 +47,11 @@ main.main {
     color: $text-05;
     margin-bottom: pxTorem(18px);
     text-align: center;
-    transition: all 0.4s;
-    transform: translateY(20px);
-    opacity: 0;
 
-    &.in-view {
-      transform: translateY(0px);
-      opacity: 1;
+
+    @include tablet {
+      font-size: pxTorem(32px);
+      line-height: calc(42 / 32);
     }
   }
 
@@ -45,14 +61,15 @@ main.main {
     line-height: calc(32 / 20);
     color: $text-03;
     text-align: center;
-    transition: all 0.4s;
-    transform: translateY(20px);
-    opacity: 0;
 
-    &.in-view {
-      transform: translateY(0px);
-      opacity: 1;
+
+    @include tablet {
+      font-size: pxTorem(14px);
+      line-height: calc(22 / 14);
     }
+
+
+
   }
 
   .sc {
@@ -95,12 +112,17 @@ main.main {
       .text-box {
         margin-bottom: pxTorem(50px);
 
+        @include tablet {
+          margin-bottom: pxTorem(34px);
+          padding: 0 pxTorem(30px);
+        }
+
         .sc-title.big {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          transition-delay: 0.2s;
+
 
           span {
             font-weight: 700;
@@ -109,30 +131,65 @@ main.main {
             line-height: calc(84 / 62);
             @include lsToPx(62, 1);
 
+            @include tablet {
+              font-weight: 700;
+              font-size: pxTorem(34px);
+              line-height: calc(44 / 33);
+              @include lsToPx(34, 1);
+            }
+
           }
         }
 
       }
 
       .link-box {
-        opacity: 0;
-        transform: translateY(20px);
-        transition-delay: all 0.2s 0.4s;
 
-        &.in-view {
-          opacity: 1;
-          transform: translateY(0px);
+        @include tablet {
+          padding: 0 pxTorem(30px);
         }
+
+
 
       }
 
+      .ico-scroll {
+        position: absolute;
+        bottom: pxTorem(30px);
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll 1.5s infinite;
 
+        @keyframes scroll {
+          0% {
+            transform: translate(-50%, 0px);
+          }
+
+          50% {
+            transform: translate(-50%, -20px);
+          }
+
+          110% {
+            transform: translate(-50%, 0px);
+          }
+        }
+      }
     }
 
     &-proxy {
       position: relative;
       padding: pxTorem(250px) 0 pxTorem(153px);
+
       // height: 400vh;
+      @include tablet {
+        padding: pxTorem(60px) 0;
+      }
+
+      .title-box {
+        @include tablet {
+          margin-bottom: pxTorem(92px);
+        }
+      }
 
       .content-box {
         width: 100%;
@@ -144,12 +201,23 @@ main.main {
         top: 0;
         overflow: hidden;
 
+
+        @include tablet {
+          flex-direction: column;
+          height: auto;
+        }
+
         .content-text-box {
           position: relative;
           width: pxTorem(510px);
 
+          @include tablet {
+            width: 100%;
+
+          }
+
           .content-text {
-            // height: 100%;
+
 
             position: absolute;
             top: 50%;
@@ -158,6 +226,11 @@ main.main {
             display: flex;
             align-items: flex-start;
             opacity: 0;
+
+            @include tablet {
+              flex-direction: column;
+
+            }
 
             &.active {
               opacity: 1;
@@ -171,6 +244,13 @@ main.main {
               color: $text-05;
               display: block;
               margin-bottom: pxTorem(12px);
+
+              @include tablet {
+                font-size: pxTorem(25px);
+                line-height: calc(30 / 25);
+                @include lsToPx(25, 1);
+                margin-bottom: pxTorem(8px);
+              }
             }
 
 
@@ -180,6 +260,10 @@ main.main {
               line-height: calc(32 / 22);
               color: $text-05;
 
+              @include tablet {
+                font-size: pxTorem(16px);
+                line-height: calc(24 / 16);
+              }
             }
           }
 
@@ -191,29 +275,52 @@ main.main {
           align-items: center;
         }
 
+        /* Mobile */
+        &.mo-only {
 
-        // .content-list {
-        //   max-width: pxTorem(1160px);
+          article {
+            // height: 100vh;
 
-        //   // overflow: hidden;
-        // }
+            +article {
+              margin-top: pxTorem(90px);
+            }
+          }
 
-        // .content-item {
-        //   display: flex;
-        //   align-items: center;
-        //   justify-content: space-between;
-        //   width: 100%;
+          .text-box {
+            padding-left: pxTorem(26px);
 
+            em {
+              display: inline-block;
+              font-weight: 700;
+              font-size: pxTorem(25px);
+              line-height: calc(30px);
+              @include lsToPx(25, -1);
+              color: $text-05;
+              margin-bottom: pxTorem(8px);
+            }
 
+            p {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 24px;
+              margin-bottom: pxTorem(8px);
+            }
+          }
 
-        //   .content-text-box {
+          .img-box {
 
+            // height: 70vh;
+            width: 100%;
+            aspect-ratio: 375 / 577;
 
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
 
-
-
-        //   }
-        // }
+            }
+          }
+        }
       }
 
     }
@@ -221,8 +328,16 @@ main.main {
     &-visit {
       padding: pxTorem(153px) 0 0;
 
+      @include tablet {
+        padding-top: pxTorem(120px);
+      }
+
       .title-box {
         margin-bottom: pxTorem(204px);
+
+        @include tablet {
+          margin-bottom: pxTorem(100px);
+        }
       }
 
       .content-box {
@@ -231,7 +346,14 @@ main.main {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        border: 1px solid red;
+
+        @include tablet {}
+      }
+
+      .content-list {
+        @include tablet {
+          width: 100%;
+        }
       }
 
       .content-list {
@@ -302,6 +424,12 @@ main.main {
             line-height: calc(72/50);
             color: $white;
 
+            @include tablet {
+              font-size: pxTorem(26px);
+              line-height: calc(30/26);
+              @include lsToPx(26, -1);
+            }
+
           }
 
           p {
@@ -311,15 +439,33 @@ main.main {
             font-size: pxTorem(22px);
             line-height: calc(34 / 22);
             color: $white;
+
+            @include tablet {
+              margin-top: pxTorem(10px);
+              font-size: pxTorem(16px);
+              line-height: calc(24 / 16);
+            }
           }
         }
 
         &.step-1 {
+          @include tablet {
+            width: 100%;
+            padding: 0px pxTorem(35px);
+          }
+
           .figure-box {
             width: pxTorem(640px);
             height: pxTorem(640px);
             clip-path: polygon(0.075% 43.947%, 0.075% 43.947%, 0.126% 42.786%, 0.279% 41.641%, 0.531% 40.515%, 0.881% 39.416%, 1.328% 38.35%, 1.868% 37.321%, 2.501% 36.336%, 3.225% 35.402%, 4.037% 34.523%, 4.936% 33.706%, 40.165% 3.549%, 40.165% 3.549%, 41.909% 2.271%, 43.797% 1.278%, 45.792% 0.568%, 47.859% 0.142%, 49.963% 0%, 52.066% 0.142%, 54.133% 0.568%, 56.129% 1.278%, 58.016% 2.271%, 59.761% 3.549%, 95.138% 33.706%, 95.138% 33.706%, 96.02% 34.523%, 96.822% 35.402%, 97.541% 36.336%, 98.174% 37.321%, 98.719% 38.35%, 99.172% 39.416%, 99.529% 40.515%, 99.789% 41.641%, 99.947% 42.786%, 100% 43.947%, 100% 86.158%, 100% 86.158%, 99.808% 88.399%, 99.251% 90.526%, 98.36% 92.511%, 97.166% 94.325%, 95.699% 95.939%, 93.99% 97.324%, 92.069% 98.452%, 89.967% 99.293%, 87.714% 99.818%, 85.34% 100%, 14.66% 100%, 14.66% 100%, 12.286% 99.818%, 10.033% 99.293%, 7.931% 98.452%, 6.01% 97.324%, 4.301% 95.939%, 2.834% 94.325%, 1.64% 92.511%, 0.749% 90.526%, 0.192% 88.399%, 0% 86.158%, 0% 43.947%, 0.075% 43.947%);
             background-image: url('../images/image/img-visit-1.png');
+
+            @include tablet {
+              width: 100%;
+              aspect-ratio: 1 / 1;
+              height: auto;
+
+            }
 
             &::before {
               background-color: rgba(26, 101, 255, 0.7);
@@ -328,11 +474,22 @@ main.main {
         }
 
         &.step-2 {
+          @include tablet {
+            width: 100%;
+            padding: 0px pxTorem(32px);
+          }
+
           .figure-box {
             width: pxTorem(640px);
             height: pxTorem(640px);
             clip-path: circle(50% at 50% 50%);
             background-image: url('../images/image/img-visit-2.png');
+
+            @include tablet {
+              width: 100%;
+              height: auto;
+              aspect-ratio: 1 / 1;
+            }
 
             &::before {
               background-color: rgba(0, 190, 183, 0.7);
@@ -341,11 +498,22 @@ main.main {
         }
 
         &.step-3 {
+          @include tablet {
+            width: 100%;
+            padding: 0px pxTorem(35px);
+          }
+
           .figure-box {
             width: pxTorem(640px);
             height: pxTorem(640px);
             clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
             background-image: url('../images/image/img-visit-3.png');
+
+            @include tablet {
+              height: auto;
+              aspect-ratio: 1 / 1;
+              width: 100%;
+            }
 
             &::before {
               background-color: rgba(26, 101, 255, 0.7)
@@ -354,33 +522,86 @@ main.main {
         }
 
         &.step-4 {
+
+          @include tablet {
+            width: 100%;
+            padding: 0px pxTorem(35px);
+          }
+
           .figure-box {
             width: pxTorem(640px);
             height: pxTorem(640px);
             clip-path: polygon(0% 11.554%, 0% 11.554%, 0.27% 9.066%, 1.036% 6.804%, 2.232% 4.806%, 3.793% 3.111%, 5.651% 1.759%, 7.743% 0.787%, 10% 0.235%, 12.358% 0.141%, 14.751% 0.545%, 17.112% 1.485%, 44.516% 15.879%, 44.516% 15.879%, 45.563% 16.365%, 46.643% 16.743%, 47.748% 17.013%, 48.87% 17.175%, 50% 17.229%, 51.13% 17.175%, 52.252% 17.013%, 53.357% 16.743%, 54.437% 16.365%, 55.484% 15.879%, 82.888% 1.485%, 82.888% 1.485%, 85.249% 0.545%, 87.642% 0.141%, 90% 0.235%, 92.258% 0.787%, 94.349% 1.759%, 96.207% 3.111%, 97.768% 4.806%, 98.964% 6.804%, 99.73% 9.066%, 100% 11.554%, 100% 85.318%, 100% 85.318%, 99.804% 87.7%, 99.238% 89.959%, 98.331% 92.065%, 97.116% 93.989%, 95.621% 95.7%, 93.879% 97.167%, 91.92% 98.361%, 89.775% 99.252%, 87.475% 99.808%, 85.05% 100%, 14.95% 100%, 14.95% 100%, 12.525% 99.808%, 10.225% 99.252%, 8.08% 98.361%, 6.121% 97.167%, 4.379% 95.7%, 2.885% 93.989%, 1.669% 92.065%, 0.762% 89.959%, 0.196% 87.7%, 0% 85.318%, 0% 11.554%);
             background-image: url('../images/image/img-visit-4.png');
+
+            @include tablet {
+              // height: auto;
+              height: auto;
+              aspect-ratio: 1 / 1;
+              width: 100%;
+              transition: 0.7s;
+            }
           }
 
 
           &.wide {
             opacity: 1;
 
-
             .figure-box {
               width: 100vw;
-              height: 100vh;
+              // width: 100%;
+              // height: 100vh;
               clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+              height: 100vh;
+
+              @include mobile {
+                aspect-ratio: 375 / 812;
+              }
             }
+          }
+
+          &.active {
+            opacity: 1;
 
             .text-box {
               opacity: 1;
-              transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%)
+            }
+          }
 
+          .text-box {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+
+            @include tablet {
+              padding: 0 pxTorem(30px);
             }
 
+            em {
+              opacity: 0;
+              transform: translateY(30px);
+              transition: all 0.7s 0.4s;
+              margin-bottom: pxTorem(50px);
 
+              &.active {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
 
+            .link-store {
+              opacity: 0;
+              transform: translateY(30px);
+              transition: all 0.7s 0.6s;
+
+              &.active {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
           }
+
         }
 
 
@@ -392,6 +613,11 @@ main.main {
     &-inquiry {
       padding: pxTorem(180px) 0 pxTorem(136px);
 
+
+      @include tablet {
+        padding: pxTorem(50px) pxTorem(18px);
+      }
+
       .inquiry-list {
         width: 100%;
         max-width: pxTorem(1280px);
@@ -400,32 +626,67 @@ main.main {
         align-items: center;
         margin: 0 auto;
 
+        @include tablet {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
 
       }
 
       .inquiry-item {
 
+        @include tablet {
+          width: 100%;
 
+          +.inquiry-item {
+            margin-top: pxTorem(52px);
+          }
+        }
 
         a {
           display: flex;
           align-items: center;
+
+          @include tablet {
+            align-items: flex-start;
+            flex-direction: column;
+            width: 100%;
+          }
         }
 
         .text-box {
           display: flex;
           flex-direction: column;
 
+          @include tablet {
+            width: 100%;
+          }
+
           span {
             font-weight: 700;
             font-size: pxTorem(36px);
-            line-height: calc(52 / 38);
+            line-height: calc(52 / 36);
             display: flex;
             align-items: center;
             color: $main-blue;
 
+            @include tablet {
+              font-size: pxTorem(24px);
+              line-height: pxTorem(34px);
+              @include lsToPx(24, 1);
+              justify-content: space-between;
+              align-items: flex-start;
+              width: 100%;
+            }
+
             i {
               margin-left: pxTorem(4px);
+
+              @include tablet {
+                margin-left: auto;
+                margin-top: 2px;
+              }
             }
           }
 

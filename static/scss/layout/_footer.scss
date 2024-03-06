@@ -2,6 +2,10 @@ footer {
   padding: pxTorem(50px);
   border-top: 2px solid $line-03;
 
+  @include tablet {
+    padding: pxTorem(30px) pxTorem(20px);
+  }
+
 
   .footer-logo {
     display: flex;
@@ -42,8 +46,16 @@ footer {
       line-height: 1;
       color: $text-05;
 
+      @include tablet {
+        font-size: 13px;
+      }
+
       +a {
         margin-left: pxTorem(16px);
+
+        @include tablet {
+          margin-left: 12px;
+        }
       }
     }
   }
@@ -53,13 +65,34 @@ footer {
     justify-content: space-between;
     align-items: flex-end;
 
+    @include tablet {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
     &-inner {
+      @include tablet {
+        width: 100%;
+      }
+
       >div {
         display: flex;
         align-items: center;
 
+
+        @include tablet {
+          width: 100%;
+          flex-wrap: wrap;
+          column-gap: 4px;
+        }
+
         +div {
           margin-top: pxTorem(6px);
+
+          @include tablet {
+            margin-top: 0;
+          }
         }
       }
 
@@ -71,8 +104,19 @@ footer {
         font-size: pxTorem(13px);
         color: $text-03;
 
+        @include tablet {
+          // width: 100%;
+          max-width: fit-content;
+          line-height: 20px;
+          color: $text-04;
+        }
+
         +span {
           margin-left: pxTorem(14px);
+
+          @include tablet {
+            margin-left: 0;
+          }
         }
       }
     }
@@ -82,5 +126,9 @@ footer {
     font-weight: 300;
     font-size: pxTorem(13px);
     color: $text-03;
+
+    @include tablet {
+      margin-top: pxTorem(10px);
+    }
   }
 }

@@ -9,14 +9,19 @@
 
 .pc-only {
 	@include tablet {
-		display: none;
+		display: none !important;
 	}
 }
 
 .mo-only {
-	display: none;
+	display: none !important;
 
 	@include tablet {
-		display: block
+		display: block !important;
 	}
+}
+
+.scroll-lock {
+	height: 100%;
+	overflow: hidden;
 }

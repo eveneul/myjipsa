@@ -1,9 +1,22 @@
 .privacy {
   padding: 90px 0 160px;
 
+  @include tablet {
+
+    padding: pxTorem(50px) pxTorem(24px);
+    overflow-x: hidden;
+
+  }
+
+
   .inner {
     max-width: pxTorem(1160px);
     margin: 0 auto;
+
+    @include tablet {
+      width: 100%;
+      max-width: 100%;
+    }
 
     .sc-title {
       font-weight: 700;
@@ -11,6 +24,12 @@
       line-height: 54px;
       color: $text-05;
       margin-bottom: 50px;
+
+      @include tablet {
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: -0.28px;
+      }
     }
 
     .select-box {
@@ -20,15 +39,19 @@
 
 
     .privacy-box {
-
-
-
       .privacy-title {
         font-weight: 600;
         font-size: pxTorem(32px);
         line-height: calc(42/32);
         color: $text-05;
         margin-bottom: pxTorem(34px);
+
+        @include tablet {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 34px;
+          letter-spacing: -0.24px;
+        }
       }
 
       .privacy-desc {
@@ -38,6 +61,13 @@
         line-height: calc(26 / 18);
         color: $text-05;
         margin-bottom: pxTorem(34px);
+
+        @include tablet {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 26px
+        }
       }
 
       ul {
@@ -53,6 +83,13 @@
           line-height: calc(26 / 18);
           color: $text-04;
 
+          @include tablet {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+          }
+
 
 
           +li {
@@ -66,10 +103,16 @@
             line-height: calc(26 / 18);
             color: $text-04;
 
+            @include tablet {
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 26px;
+            }
+
           }
 
           .content {
-            width: 100%;
+            flex: 1;
             display: flex;
             flex-direction: column;
 
@@ -78,11 +121,13 @@
               font-size: pxTorem(18px);
               line-height: calc(26 / 18);
               color: $text-04;
+
+              @include tablet {}
             }
 
 
             .desc {
-              width: 100%;
+              flex: 1;
               display: flex;
               flex-direction: column;
             }
@@ -90,6 +135,9 @@
             >ul {
               margin-top: pxTorem(24px);
 
+              @include tablet {
+                margin-top: pxTorem(16px);
+              }
 
               li {
                 font-weight: 400;
@@ -110,85 +158,107 @@
 
       +.privacy-box {
         margin-top: pxTorem(60px);
+
+        @include tablet {
+          margin-top: pxTorem(50px);
+        }
       }
 
       .sub-desc {
         margin-top: pxTorem(16px);
+
       }
 
-      table {
+      .table-box {
+        position: relative;
         width: 100%;
-        border-top: 1px solid $black;
 
-        th,
-        td {
-          padding: pxTorem(16px) 0;
+        @include tablet {
+          overflow-x: scroll;
         }
 
-        th {
-          font-weight: 600;
-          font-size: pxTorem(18px);
-          line-height: calc(26 / 18);
-          color: $text-05;
-        }
+        table {
+          width: 100%;
+          border-top: 1px solid $black;
 
-        td {
-          text-align: center;
-          font-weight: 400;
-          font-size: pxTorem(18px);
-          line-height: calc(26 / 18);
-          color: $text-05;
+          @include tablet {
+            min-width: 100%;
+            width: max-content;
 
-          ul {
+          }
+
+          th,
+          td {
+            padding: pxTorem(16px) 0;
+          }
+
+          th {
+            font-weight: 600;
+            font-size: pxTorem(18px);
+            line-height: calc(26 / 18);
+            color: $text-05;
+          }
+
+          td {
+            text-align: center;
             font-weight: 400;
             font-size: pxTorem(18px);
             line-height: calc(26 / 18);
             color: $text-05;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            // align-items: center;
-            padding: 0 24px;
 
-
-            li {
+            ul {
+              font-weight: 400;
+              font-size: pxTorem(18px);
+              line-height: calc(26 / 18);
+              color: $text-05;
               display: flex;
-              margin: 0;
-              // text-align: center;
-              text-align: left;
-              width: fit-content;
+              flex-direction: column;
+              justify-content: center;
+              // align-items: center;
+              padding: 0 24px;
 
 
-              .dot {
-                width: 4px;
-                height: 4px;
-                margin-top: 9px;
-                border-radius: 50%;
-                margin-right: 8px;
-                background-color: $text-04;
+              li {
+                display: flex;
+                margin: 0;
+                // text-align: center;
+                text-align: left;
+                width: fit-content;
+
+
+                .dot {
+                  width: 4px;
+                  height: 4px;
+                  margin-top: 9px;
+                  border-radius: 50%;
+                  margin-right: 8px;
+                  background-color: $text-04;
+                }
               }
             }
           }
-        }
 
-        /* Border */
+          /* Border */
 
-        tr {
-          border-bottom: 1px solid $line-03;
+          tr {
+            border-bottom: 1px solid $line-03;
 
-        }
-
-        td,
-        th {
-
-
-          +td,
-          +th {
-            border-left: 1px solid $line-03;
           }
 
+          td,
+          th {
+
+
+            +td,
+            +th {
+              border-left: 1px solid $line-03;
+            }
+
+          }
         }
       }
+
+
 
       .section-title {
         font-weight: 600;
