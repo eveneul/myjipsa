@@ -1288,6 +1288,26 @@ main.main .sc-visual .text-box .sc-title.big span {
     letter-spacing: -0.34px;
   }
 }
+main.main .sc-visual .text-box .sc-title.big span:nth-of-type(2) {
+  display: flex;
+}
+main.main .sc-visual .text-box .sc-title.big .split-wrap {
+  display: flex;
+  overflow: hidden;
+  transform: translateY(10px);
+  transition: transform 0.2s 0.2s;
+}
+main.main .sc-visual .text-box .sc-title.big .split-wrap .split {
+  display: inline-block;
+  transform: perspective(1000px) translate3d(0%, 100%, 0px) rotateX(-90deg);
+  transition: transform 0.7s cubic-bezier(0.43, 0.05, 0.17, 1) 0.3s;
+}
+main.main .sc-visual .text-box .sc-title.big .split-wrap.active {
+  transform: translateY(0);
+}
+main.main .sc-visual .text-box .sc-title.big .split-wrap.active .split {
+  transform: perspective(1000px) translate3d(0px, 0%, 0px);
+}
 @media screen and (max-width: 1240px) {
   main.main .sc-visual .link-box {
     padding: 0 1.875rem;
@@ -1629,7 +1649,7 @@ main.main .sc-visit .content-item.step-4 .figure-box {
     height: auto;
     aspect-ratio: 1/1;
     width: 100%;
-    transition: 0.7s;
+    transition: all 0.7s;
   }
 }
 main.main .sc-visit .content-item.step-4.wide {
@@ -1641,9 +1661,10 @@ main.main .sc-visit .content-item.step-4.wide .figure-box {
           clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
   height: 100vh;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1240px) {
   main.main .sc-visit .content-item.step-4.wide .figure-box {
-    aspect-ratio: 375/812;
+    transform: scale(2);
+    height: auto;
   }
 }
 main.main .sc-visit .content-item.step-4.active {

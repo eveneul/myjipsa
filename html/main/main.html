@@ -31,9 +31,9 @@
     </a>
     <nav>
       <ul>
-        <li><a href="">Service</a></li>
-        <li><a href="">Download</a></li>
-        <li><a href="">Contact us</a></li>
+        <li data-anchor="service">Service</li>
+        <li data-anchor="download">Download</li>
+        <li data-anchor="contact">Contact us</li>
       </ul>
     </nav>
     <button class="btn-menu">
@@ -87,7 +87,14 @@
       </div>
       <div class="text-box">
         <h2 class="sc-title big" data-scroll-target><span>방문부터 계약까지</span>
-          <span>마이집사와 함께하세요.</span>
+          <span>
+            <em class="split-wrap">
+              <span class="split" style="transition-delay: 0.2s">마</span>
+              <span class="split" style="transition-delay: 0.35s">이</span>
+              <span class="split" style="transition-delay: 0.4s">집</span>
+              <span class="split" style="transition-delay: 0.55s">사</span>
+            </em>
+            와 함께하세요.</span>
         </h2>
 
       </div>
@@ -103,7 +110,7 @@
       </div>
       <i class="ico-scroll mo-only"></i>
     </section>
-    <section class="sc-proxy">
+    <section class="sc-proxy" data-section="service">
       <div class="title-box" data-scroll-trigger>
         <em class="sc-category" data-scroll-target>집봐주세요</em>
         <h2 class="sc-title pc-only">내가 마음에 드는 집, 대신 봐드립니다</h2>
@@ -266,7 +273,7 @@
           </li>
           <li class="content-item step-4">
             <div class="figure-box"></div>
-            <div class="text-box">
+            <div class="text-box" data-section="download">
               <em>복잡한 부동산 계약<br />마이집사에게 부탁해 보세요.</em>
               <div class="link-box">
                 <a href="" class="link-store">
@@ -285,7 +292,7 @@
       </div>
 
     </section>
-    <section class="sc-inquiry">
+    <section class="sc-inquiry" data-section="contact">
       <h2 class="hidden">마이집사 제휴, 광고, 중개파트너 문의하기</h2>
       <ul class="inquiry-list">
         <li class="inquiry-item" data-type="1">

@@ -1,5 +1,6 @@
 import { Common } from "../common.js";
 import InviewObserver from "../InteractionObserver.js";
+import { lenisScroll } from "../lenis-scroll.js";
 import MainInteraction from "./interaction.js";
 
 const interaction = new MainInteraction();
@@ -20,6 +21,7 @@ export class Main extends Common {
     super();
     this.handleOpenPopup();
     this.handleClosePopup();
+    this.popupTextareaWheel();
   }
 
   handleOpenPopup() {
@@ -30,13 +32,21 @@ export class Main extends Common {
       $("body, html").css("scrollbar-gutter", "stable");
       $("body").css("overflow", "hidden");
       $(`#popup[data-type="${type}"]`).addClass("active");
+      lenisScroll.stop();
     });
   }
 
   handleClosePopup() {
     $("#popup .popup-close").click(function () {
       $(`#popup[data-type]`).removeClass("active");
+      lenisScroll.start();
       // this.handleScrollUnlock();
+    });
+  }
+
+  popupTextareaWheel() {
+    $("#popup textarea").on("wheel", (e) => {
+      e.stopPropagation();
     });
   }
 }

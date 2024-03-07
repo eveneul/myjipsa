@@ -18,6 +18,7 @@ export class Common extends MainInteraction {
     this.handleScroll();
     this.handleScrollToTop();
     this.handleOpenSidebar();
+    this.handleHeaderNaviClick();
     // this.handleScrollLock();
   }
 
@@ -75,8 +76,11 @@ export class Common extends MainInteraction {
   }
 
   handleScrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     $(this.topBtn).click(() => {
-      $("body, html").animate({ scrollTop: 0 });
+      // $("body, html").animate({ scrollTop: 0 });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      console.log("click top button");
     });
   }
 
@@ -109,11 +113,36 @@ export class Common extends MainInteraction {
 
   handleOpenSidebar() {
     const that = this;
-    $(this.menuBtn).click(function () {
-      $(that.menuBtn).toggleClass("open");
-      $(that.sidebar).toggleClass("open");
+    $(this.menuBtn).click(() => {
+      console.log("test");
+      $(this.menuBtn).toggleClass("open");
+      $(this.sidebar).toggleClass("open");
+
+      if ($(this.menuBtn).hasClass("open")) {
+        lenisScroll.stop();
+      } else {
+        lenisScroll.start();
+      }
+    });
+  }
+
+  handleHeaderNaviClick() {
+    $(this.navItems).click(function (e) {
+      // e.preventDefault();
+
+      const target = $(this).data("anchor");
+      const section = $(`[data-section="${target}"]`);
+
+      $([document.documentElement, document.body]).animate(
+        {
+          scrollTop: $(section).offset().top,
+        },
+        {
+          duration: 1000,
+        }
+      );
     });
   }
 }
 
-const c = new Common();
+// const c = new Common();

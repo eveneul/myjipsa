@@ -1,4 +1,5 @@
 import InviewObserver from "../InteractionObserver.js";
+import { lenisScroll } from "../lenis-scroll.js";
 export default class MainInteraction {
   constructor() {
     this.navItems = $("#header nav ul li");
@@ -9,6 +10,11 @@ export default class MainInteraction {
     this.header = $("#header");
     this.handleMouseEnterGnb();
     this.handleMouseLeaveGnb();
+    this.visualTextAnimation();
+  }
+
+  visualTextAnimation() {
+    $(".sc-visual .text-box .split-wrap").addClass("active");
   }
 
   proxyContentAnimation() {
@@ -116,7 +122,6 @@ export default class MainInteraction {
 
   textFadeIn(element) {
     const parent = $(element).closest("[data-scroll-trigger]");
-    console.log(parent, element);
 
     if (!parent) return;
 
